@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>HCI Classroom</title>
+  <link rel="icon" href="image.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #34db34;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      float: left;
+      /* Placeholder logo styling */
+      margin-right: 10px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .login-form {
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .login-button,
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      background-color: #34db34;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .login-button:hover,
+    button:hover {
+      background-color: #29b93a;
+      transform: translateY(-2px);
+    }
+
+    .register-link a {
+      display: inline-block;
+      padding: 5px 10px;
+      margin-top: 10px;
+      text-decoration: none;
+      background-color: #2ecc71;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .register-link a:hover {
+      background-color: #27ae60;
+    }
+
+    .footer {
+      background-color: #47a52d;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+   
+    <h1>HCI Classroom</h1>
+  </header>
+
+  <!-- Form Section -->
+  <form class="login-form">
+    <h2>Student Registration</h2>
+    <label for="rollNo">Roll Number:</label>
+    <input type="text" id="rollNo" name="rollNo" required>
+
+    <label for="studentName">Student Name:</label>
+    <input type="text" id="studentName" name="studentName" required>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="button" onclick="addStudent()" class="login-button">Add Student</button>
+  </form>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 6430_Prabhat</p>
+  </footer>
+
+  <script>
+    function addStudent() {
+      var rollNo = document.getElementById('rollNo').value;
+      var studentName = document.getElementById('studentName').value;
+      var email = document.getElementById('email').value;
+
+      // Basic alert for demonstration purposes
+      alert('Student added!\nRoll Number: ' + rollNo + '\nName: ' + studentName + '\nEmail: ' + email);
+
+      // Redirect to the login page after adding a student
+      window.location.href = 'index.html';
+
+      // You can perform additional actions here, such as sending data to the server and updating the database
+    }
+  </script>
+
+</body>
+</html>

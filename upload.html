@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="icon" href="image.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="styles.css"> <!-- Assuming you have a separate CSS file -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #34db34;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .post-assignment-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .post-assignment-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .post-assignment-form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .post-assignment-form input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .post-assignment-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            background-color: #34db34;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .post-assignment-form button:hover {
+            background-color: #29b93a;
+            transform: translateY(-2px);
+        }
+
+        .message {
+            margin-top: 20px;
+            color: green; /* You can customize the color */
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>HCI Classroom</h1>
+    </div>
+
+    <div class="post-assignment-form">
+        <h2>Post Assignment</h2>
+        <label for="assignmentTitle">Assignment Title:</label>
+        <input type="text" id="assignmentTitle" name="assignmentTitle" required>
+
+        <label for="fileUpload">Upload File:</label>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .doc, .docx" required>
+
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" name="dueDate" required>
+
+        <button type="button" onclick="postAssignment()">Post Assignment</button>
+
+        <div class="message" id="assignmentMessage"></div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 6430_Prabhat</p>
+    </div>
+
+    <script>
+        function postAssignment() {
+            var assignmentTitle = document.getElementById('assignmentTitle').value;
+            var fileUpload = document.getElementById('fileUpload').value; // You can handle file uploads using appropriate methods
+            var dueDate = document.getElementById('dueDate').value;
+
+            // Perform any necessary actions on assignment posting (e.g., send data to the server)
+            var messageDiv = document.getElementById('assignmentMessage');
+            messageDiv.innerHTML = 'Assignment posted!<br>Title: ' + assignmentTitle + '<br>File: ' + fileUpload + '<br>Due Date: ' + dueDate;
+        }
+    </script>
+</body>
+</html>

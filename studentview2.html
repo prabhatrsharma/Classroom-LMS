@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Library</title>
+    <link rel="icon" href="image.png" type="image/x-icon">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .header {
+            background-color: #34db34;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .library-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .library-grid {
+            display: grid;
+            align-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .book {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .book:hover {
+            background-color: #f0f0f0;
+        }
+
+        .book-details {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #47a52d;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .login-button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      background-color: #34db34;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .login-button:hover {
+        background-color: #29b93a;
+        transform: translateY(-2px);
+    }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>HCI Classroom</h1>
+    </div>
+
+    <!-- Library Section -->
+    <div class="library-section">
+        <h2>Material Library</h2>
+        <div class="library-grid">
+            <div class="book" onclick="showBookDetails('Book 1')">Book 1</div>
+            <div class="book" onclick="showBookDetails('Book 2')">Book 2</div>
+            <div class="book" onclick="showBookDetails('Book 3')">Book 3</div>
+            <!-- Add more books as needed -->
+        </div>
+    </div>
+
+    <!-- Book Details Section -->
+    <div class="book-details" id="bookDetails">
+        <!-- Book details will be displayed here -->
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 6430_Prabhat</p>
+    </div>
+
+    <script>
+        function showBookDetails(bookName) {
+            // Replace this with actual book details
+            var bookDetails = getBookDetails(bookName);
+
+            // Update the content of the book-details div
+            var bookDetailsDiv = document.getElementById('bookDetails');
+            bookDetailsDiv.innerHTML = '<h3>' + bookName + ' Details</h3>' +
+                                       '<p>Name: ' + bookDetails.name + '</p>' +
+                                       '<p>Size: ' + bookDetails.size + '</p>' +
+                                       '<p>Subject: ' + bookDetails.subject + '</p>' +
+                                       '<button class="login-button" onclick="downloadBook(\'' + bookDetails.name + '\')">Download</button>';
+
+            // Show the book-details div
+            bookDetailsDiv.style.display = 'block';
+        }
+
+        function downloadBook(bookName) {
+            // Replace this with actual download logic
+            alert('Downloading ' + bookName);
+        }
+
+        function getBookDetails(bookName) {
+            // Replace this with actual book details retrieval logic
+            // Example data, replace with actual data
+            var bookDetails = {
+                name: bookName,
+                size: 'Large',
+                subject: 'Science'
+            };
+
+            return bookDetails;
+        }
+    </script>
+
+</body>
+</html>
